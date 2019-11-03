@@ -1,0 +1,47 @@
+.studentLogIn-container{
+    /* height: 100vh; */
+    /* background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./static/images/pizza-bg.png'); */
+    /* background: #333333; */
+}
+/* .studentLogIn-container .container{
+    height: 100%;
+} */
+.studentLogIn-content{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+.studentLogIn-content form fieldset{
+    width:100%;
+    margin-bottom: 30px;
+}
+.studentLogIn-content form{
+    width: 100%;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#login{
+    width: 30%;
+    margin : 10px auto 0px;
+    border: none;
+    border: 1px solid #fff;
+    color: rgb(223, 223, 223);
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #666;
+    margin-top: 20px;
+  }
+@media(max-width:700px){
+    .studentLogIn-content form fieldset{
+        width:100%;
+    }
+}

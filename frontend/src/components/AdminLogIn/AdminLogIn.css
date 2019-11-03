@@ -1,0 +1,72 @@
+.adminLogIn-container{
+    /* height: 100vh; */
+    /* background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./static/images/pizza-bg.png'); */
+    /* background: #333333; */
+}
+/* .adminLogIn-container .container{
+    height: 100%;
+}
+.adminLogIn-content{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+@media(min-width:700px){
+    .adminLogIn-content fieldset{
+        min-width: 35%;
+    }
+}
+#login{
+    background-color: #555;
+    color: #fff;
+    min-width: fit-content;
+  } */
+.adminLogIn-container{
+    /* height: 100vh; */
+    /* background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('./static/images/pizza-bg.png'); */
+    /* background: #333333; */
+}
+/* .studentLogIn-container .container{
+    height: 100%;
+} */
+.adminLogIn-content{
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+.adminLogIn-content form fieldset{
+    width:100%;
+}
+.adminLogIn-content form{
+    width: 100%;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#login{
+    width: 30%;
+    margin : 10px auto 0px;
+    border: none;
+    border: 1px solid #fff;
+    color: rgb(223, 223, 223);
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #666;
+    margin-top: 20px;
+  }
+@media(max-width:700px){
+    .adminLogIn-content form fieldset{
+        width:90%;
+    }
+}

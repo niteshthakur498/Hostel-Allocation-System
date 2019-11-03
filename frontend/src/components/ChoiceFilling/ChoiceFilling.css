@@ -1,0 +1,11 @@
+#choiceFilling{
+    width: 35%;
+    margin : 10px auto 0px;
+    border: none;
+    border: 1px solid #fff;
+    color: rgb(223, 223, 223);
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #666;
+  }

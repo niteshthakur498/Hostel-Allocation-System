@@ -1,0 +1,47 @@
+.infoCard-body{
+    position: relative;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); */
+    background-color: #eeeeee;
+    border-radius: 8px;
+
+}
+
+.infoCard-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+@media(min-width:500px){
+    .infoCard-body{
+        width:450px;
+    }
+}
+
+.infocard-title{
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    font-weight: 400;
+    font-family: Work Sans;
+}
+.infoCard-content div img{
+    width: 120px;
+    margin-bottom: 30px;
+}
+.infocard-buttonlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infoCard-button{
+    padding: 10px 20px;
+    text-transform: uppercase;
+    background-color: #333333;
+    border-radius: 20px;
+    color: #eee;
+    width: fit-content;
+}
