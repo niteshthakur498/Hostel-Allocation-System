@@ -11,8 +11,7 @@ class StudentLogIn extends Component{
         super(props);
         this.state={
             rollno:'',
-            password:'',
-            isLogIn:false
+            password:''
         }
     }
     handleChange(nam,val){

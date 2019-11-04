@@ -10,8 +10,8 @@ class StudentProfile extends React.Component{
         super(props);
     }
     render(){
-        let studentData=localStorage.getItem("student_token").identity;
-        console.log(studentData);
+        // let studentData=localStorage.getItem("student_token").identity;
+        // console.log(studentData);
         
     return(
         <div className="StudentProfile-Container">

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import jwt from 'jsonwebtoken';
 import {Switch,Route,Redirect} from 'react-router-dom';
 import {NavLink} from 'react-router-dom';
 import './Student.css';
@@ -10,15 +11,32 @@ import ChoiceFilling from '../ChoiceFilling/ChoiceFilling';
 import Hostel from '../Hostels/Hostels';
 
 class Student extends React.Component{
+    constructor(){
+        super();
+        let key = "student_token"
+        let token={}
+    }
     logout(){
         let key ="student_token";
         localStorage.removeItem(key);
     }
     render(){
-    if(!localStorage.getItem("student_token")&&localStorage.getItem("student_token").identity.role==='Student'){
+        //|| localStorage.getItem("student_token").identity.role !='Student'
+    if(!localStorage.getItem("student_token")){
         return(
             <Redirect to="/"/>
         )
+    }
+    else if(localStorage.getItem("student_token") && jwt.verify(localStorage.getItem("student_token"),'secret').exp<Date.now()/1000){
+        let key ="student_token";
+        localStorage.removeItem(key);
+        return(
+            <Redirect to="/"/>
+        )
+    }
+    else{
+        this.token = jwt.verify(localStorage.getItem("student_token"),'secret');
+        console.log(this.token)
     }
     return(
         <div className="student-body">
@@ -44,7 +62,7 @@ class Student extends React.Component{
                 <div className="container">
                     <Switch>
                         <Route path="/student/profile" render={
-                            (routeProps)=> (<StudentProfile {...routeProps} {...localStorage.getItem("student_token").identity}/>)
+                            (routeProps)=> (<StudentProfile {...routeProps} {...this.token.identity}/>)
                         }
                         ></Route>
                         <Route path = "/student/choice-filling" component={ChoiceFilling}></Route>
