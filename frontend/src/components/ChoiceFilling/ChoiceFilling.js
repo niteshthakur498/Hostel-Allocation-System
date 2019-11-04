@@ -10,8 +10,6 @@ class ChoiceFilling extends React.Component{
         super();
         this.state={
             rollno:'',
-            name:'',
-            email:'',
             hostel:'',
             rooms:''
         }
@@ -46,7 +44,13 @@ class ChoiceFilling extends React.Component{
             alert("Enter All Fields Correctly")
         }
         else{
-            console.log(this.state);
+            let rooms = this.state.rooms.split(',');
+            let choice = {
+                rollno:this.state.rollno,
+                hostel:this.state.hostel,
+                rooms:rooms
+            }
+            console.log(choice)
         }
       }
     render(){
@@ -80,7 +84,7 @@ class ChoiceFilling extends React.Component{
                                 htmlFor='rooms'
                                 name='rooms'
                                 type='text'
-                                placeholder='Room Choices'
+                                placeholder='Room Choices(Fill Comma separated list)'
                                 onChange = {this.handleChange.bind(this)}
                             />
                             <Input 
