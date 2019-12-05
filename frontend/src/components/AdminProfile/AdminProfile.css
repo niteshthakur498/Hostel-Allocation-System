@@ -1,0 +1,56 @@
+.profilePicture img{
+    width: 300px;
+}
+.admin-header{
+    padding: 10px 0px;
+    margin-bottom: 50px;
+}
+.adminName{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    font-weight: 700;
+}
+.adminDesig{
+    font-size: 1.5em;
+}
+.admin-info{
+    margin-left: auto;
+    margin-right: auto;
+    /* display: table; */
+    width: 70%;
+    padding: 0px;
+}
+.infoGroup{
+    /* display: table-row; */
+    line-height: 2em;
+    display: flex;
+    margin-bottom: 25px;
+    padding: 8px;
+    border-bottom: 1px solid #000;
+}
+.infoTitle{
+    font-size: 1.8em;
+    /* display: table-cell; */
+    text-align: left;   
+    flex: 1;
+}
+.infoValue{
+    font-size: 1.5em; 
+    text-align: right;
+    flex: 1;
+}
+@media(max-width:700px){
+    .admin-info{
+        width: 100%;
+    }
+    .infoGroup{
+        line-height: 1.3em;
+    }
+    .infoTitle{
+        font-size: 1.3em;
+    }
+    .infoValue{
+        font-size: 1.2em;
+    }
+}

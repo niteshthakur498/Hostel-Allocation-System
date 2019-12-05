@@ -20,6 +20,10 @@ class Home extends React.Component{
         const {history}=this.props;
         history.push('/student/profile');
     }
+    handleAdminLogIn(){
+        const {history}=this.props;
+        history.push('/admin/profile');
+    }
     render(){   
         // var ch ;
         // if(this.context.)
@@ -60,7 +64,12 @@ class Home extends React.Component{
                                     (routeProps)=>(<StudentLogIn {...routeProps} onLogIn={this.handleLogIn.bind(this)}/>)
                                 }                            
                             ></Route>
-                            <Route path="/admin-in" component={AdminLogIn}></Route>
+                            <Route path="/admin-in" 
+                                render={
+                                    (routeProps)=>(<AdminLogIn {...routeProps} onAdminLogIn={this.handleAdminLogIn.bind(this)}/>)
+                                }                            
+                            ></Route>
+                            {/* <Route path="/admin-in" component={AdminLogIn}></Route> */}
                             <Route path="/register" component={StudentRegister}></Route>
                         </Switch>                      
                         

@@ -46,11 +46,31 @@ class ChoiceFilling extends React.Component{
         else{
             let rooms = this.state.rooms.split(',');
             let choice = {
-                rollno:this.state.rollno,
-                hostel:this.state.hostel,
-                rooms:rooms
+                rollNo: this.state.rollno,
+                hostelName: this.state.hostel,
+                roomOptions: rooms
             }
-            console.log(choice)
+            fetch(
+                'http://127.0.0.1:5000/students/roomApplication',
+                {
+                    method: 'POST',  
+                    body: JSON.stringify(choice),
+                    headers:{
+                        'Content-Type': 'application/json;charset=UTF-8',
+                        'Access-Control-Allow-Origin': '*',
+                        "Access-Control-Allow-Credentials": true,
+                        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+                    }
+                }
+            )
+            .then((res)=>res.json())
+            .then(result=>{
+                console.log("jijij");
+            })
+            .catch(err=>{
+                console.log(err);
+            })
+            console.log(choice);
         }
       }
     render(){
@@ -69,6 +89,15 @@ class ChoiceFilling extends React.Component{
                                 placeholder='Roll No'
                                 onChange = {this.handleChange.bind(this)}
                             />
+                            {/* <Input 
+                                value = {this.state.cgpa}
+                                hasLabel='false'
+                                htmlFor='cgpa'
+                                name='cgpa'
+                                type='text'
+                                placeholder='CGPA'
+                                onChange = {this.handleChange.bind(this)}
+                            /> */}
                             <Select 
                                 value = {this.state.hostel}
                                 hasLabel='false'

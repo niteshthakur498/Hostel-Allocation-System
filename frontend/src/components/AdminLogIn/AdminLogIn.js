@@ -19,7 +19,11 @@ class AdminLogIn extends Component{
       }
       handleSubmit(e){
           e.preventDefault();
-          console.log(this.state);
+          
+          if(this.state.adminid==="admin" && this.state.password==="admin"){
+              console.log(this.state);
+              this.props.onAdminLogIn();
+          }
       }
     render(){
         return(

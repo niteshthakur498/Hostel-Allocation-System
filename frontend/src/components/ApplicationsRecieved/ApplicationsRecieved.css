@@ -1,0 +1,27 @@
+.applicationsList{
+    padding: 40px;
+} 
+
+.applicationList-item{
+    padding: 10px;
+
+}
+.applicationList-item{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.1em;
+}
+.item-column-no{
+    width:5%;
+}
+
+.item-column-rollNo{
+    width:20%;
+}
+
+.item-column-hostel{
+    width:35%;  
+}
+.item-column-applicantOptions{
+    width:40%;  
+}

@@ -5,6 +5,7 @@ from datetime import datetime
 from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token
+from bson import json_util
 
 app = Flask(__name__)
 
@@ -17,6 +18,7 @@ bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
 
 CORS(app)
+
 
 @app.route('/student/register', methods=["POST"])
 def register():
@@ -47,6 +49,7 @@ def register():
     result = {'Name': new_student['name'] + ' Registered'}
     return jsonify({'Result' : result})
 
+
 @app.route('/student/login', methods=['POST'])
 def login():
     students = mongo.db.students 
@@ -74,6 +77,51 @@ def login():
     else:
         result = jsonify({"result":"No results found"})
     return result 
+
+
+CORS(app)
+@app.route('/students/roomApplication',methods=['POST','GET'])
+def roomApplication():
+    roomApplications = mongo.db.roomApplications
+    if (request.method == 'POST'):
+        rollNo = request.get_json()['rollNo']
+        hostelName = request.get_json()['hostelName']
+        roomOptions = request.get_json()['roomOptions']
+        created = datetime.utcnow()
+
+        roomApplications.insert({
+            'rollNo' : rollNo,
+            'hostelName' : hostelName,
+            'roomOptions' : roomOptions,
+            'created' : created
+        })
+        result = {'Application' : 'Submitted'}
+        return jsonify({'Result' : result})
+
+    if (request.method == 'GET'):
+        roomApplications = mongo.db.roomApplications
+        response = roomApplications.find({})
+        json_docs = []
+        for doc in response:
+            json_doc = json.dumps(doc, default=json_util.default)
+            json_docs.append(json_doc)
+        result = jsonify({'response':json_docs})
+        return result
+       
+
+@app.route('/students/getApplication',methods=['POST'])
+def getApplication():
+    roomApplications = mongo.db.roomApplications
+    rollNo = request.get_json()['rollNo']
+    response = roomApplications.find_one({'rollNo':rollNo})
+    if response:
+        result = jsonify({'rollNo':response['rollNo'],'hostelName':response['hostelName'],'roomOptions':response['roomOptions']})
+    else:
+        result = jsonify({'result':'No results found'})
+    return result
+
+
+
 
 if __name__=='__main__':
     app.run(debug=True)
