@@ -24,4 +24,6 @@
 }
 .item-column-applicantOptions{
     width:40%;  
+    display: flex;
+    flex-direction: column;
 }

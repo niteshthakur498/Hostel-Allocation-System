@@ -11,39 +11,52 @@ class ApplicationsRecieved extends React.Component{
     }
     
     handleData = ()=>{
+        
+    }
+    componentDidMount(){
         fetch('http://127.0.0.1:5000/students/roomApplication')
             .then(res=>res.json())
             .then(result=>{
-                console.log(result);
-                this.setState({list,result});
+                console.log(result.response);
+                let ch = result.response;
+                console.log(ch)
+                this.setState({list:ch},()=>{
+                    console.log(this.state)
+                });
             })
             .catch(err=>{
                 console.log(err);
             })
-            console.log(this.applications);
     }
     render(){
-        this.handleData();
-        // const applications = this.state.applications.map((val,index)=>{
-        //     return (
-        //         <div className="applicationList-item">
-        //             <div className="item-column-no">{index+1}</div>
-        //             <div className="item-column-rollNo">{val.rollNo}</div>
-        //             <div className="item-column-hostel">{val.hostelName}</div>
-        //             <div className="item-column-applicantOptions">
-        //                 <div className="value">
-                                    
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     );
-        // })
+        const applications = this.state.list.map((val,index)=>{
+            val = JSON.parse(val)
+            console.log(val)
+            console.log(val.roomOptions);
+            let opt = (val.roomOptions).map((v,i)=>{
+                    return (<div key = {i}>
+                        {v}
+                    </div>)
+                });
+            return (
+                <div className="applicationList-item" key={index}>
+                    <div className="item-column-no">{index+1}.</div>
+                    <div className="item-column-rollNo">{val.rollNo}</div>
+                    <div className="item-column-hostel">{val.hostelName}</div>
+                    <div className="item-column-applicantOptions">
+                        {
+                            opt
+                        }
+                    </div>
+                </div>
+            );
+        })
         return(
             <div className="appplicationList-body">
                 <div className="applicationsList-content">
                     <PageTitle text="Applications Recieved"/>
                     <div className="applicationsList">
-                        
+                        {applications}
                     </div>
                 </div>
             </div>
