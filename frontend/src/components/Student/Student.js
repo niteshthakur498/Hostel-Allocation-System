@@ -52,7 +52,7 @@ class Student extends React.Component{
                             <NavLink to="/student/profile" activeClassName="menu-button--Active"  className="menu-button" >Profile</NavLink>
                             <NavLink to="/student/hostel" activeClassName="menu-button--Active"  className="menu-button" >Hostels</NavLink>
                             <NavLink to="/student/choice-filling" activeClassName="menu-button--Active"  className="menu-button" >Choice Filling</NavLink>
-                            <NavLink to="/student/edit-profile" activeClassName="menu-button--Active"  className="menu-button" >Edit Profile</NavLink>
+                            {/* <NavLink to="/student/edit-profile" activeClassName="menu-button--Active"  className="menu-button" >Edit Profile</NavLink> */}
                             <NavLink to="/" className="menu-button" onClick={this.logout.bind(this)}>Log out</NavLink>
                         </div>
                     </div>

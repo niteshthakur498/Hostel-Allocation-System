@@ -56,6 +56,14 @@ class ApplicationsRecieved extends React.Component{
                 <div className="applicationsList-content">
                     <PageTitle text="Applications Recieved"/>
                     <div className="applicationsList">
+                        <div className="applicationList-item applicationList-header">
+                        <div className="item-column-no">Serial No</div>
+                        <div className="item-column-rollNo">Roll No</div>
+                        <div className="item-column-hostel">Hostel Name</div>
+                        <div className="item-column-applicantOptions">
+                            Room Options
+                        </div>
+                    </div>
                         {applications}
                     </div>
                 </div>

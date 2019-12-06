@@ -8,7 +8,7 @@ import nith from '../../static/images/nithw.png';
 
 import AdminProfile from '../AdminProfile/AdminProfile';
 import ApplicationsRecieved from '../ApplicationsRecieved/ApplicationsRecieved';
-import Hostel from '../Hostels/Hostels';
+import AllocatedRooms from '../RoomsAllocated/RoomsAllocated'
 
 class Admin extends React.Component{
     constructor(){
@@ -36,6 +36,7 @@ class Admin extends React.Component{
                             <NavLink to="/" className="menu-button" onClick={this.logout.bind(this)}>Log out</NavLink> */}
                             <NavLink to="/admin/profile" activeClassName="menu-button--Active"  className="menu-button" >Profile</NavLink>
                             <NavLink to="/admin/applications" activeClassName="menu-button--Active"  className="menu-button" >Applications Recieved</NavLink>
+                            <NavLink to="/admin/allocatedRooms" activeClassName="menu-button--Active"  className="menu-button" >Allocated Rooms</NavLink>
                             <NavLink to="/" className="menu-button" onClick={this.logout.bind(this)}>Log out</NavLink>
                         </div>
                     </div>
@@ -49,7 +50,7 @@ class Admin extends React.Component{
                         }
                         ></Route>
                         <Route path = "/admin/applications" component={ApplicationsRecieved}></Route>
-                        <Route path = "/student/hostel" component={Hostel}></Route>
+                        <Route path = "/admin/allocatedRooms" component={AllocatedRooms}></Route>
                         {/* <Route path = "/student/edit-profile" component={Edit-Profile}></Route> */}
                     </Switch>
                 </div>

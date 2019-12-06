@@ -26,6 +26,7 @@ class App extends Component {
           <Route exact path='/student/edit-profile' component={Student}></Route>
           <Route exact path='/admin/profile' component={Admin}></Route>
           <Route exact path='/admin/applications' component={Admin}></Route>
+          <Route exact path='/admin/allocatedRooms' component={Admin}></Route>
         </Switch>
       </div>
     );
