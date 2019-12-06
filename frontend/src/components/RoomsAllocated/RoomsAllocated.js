@@ -9,7 +9,7 @@ class RoomsAllocated extends React.Component{
             <div className="allocatedList-body">
                 <div className="allocatedbody-content">
                     <PageTitle text ="Allocated Rooms"/>
-                    <div>
+                    <div className="roomsList">
                         
                     </div>
                 </div>
