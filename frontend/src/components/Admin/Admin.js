@@ -14,10 +14,16 @@ class Admin extends React.Component{
     constructor(){
         super();
     }
-    logout(){
-        console.log("Hi")
-    }
+        logout(){
+            let key ="admin_token";
+            localStorage.removeItem(key);
+        }
     render(){
+        if(!localStorage.getItem("admin_token")){
+            return(
+                <Redirect to="/"/>
+            )
+        }
         return(
             <div className="admin-body">
             <div className="leftSide">

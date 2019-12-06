@@ -122,6 +122,31 @@ def getApplication():
 
 
 
+@app.route('/admin/login', methods=['POST'])
+def adminlogin():
+    admin = mongo.db.admin
+    adminID = request.get_json()['adminID']
+    password = request.get_json()['password']
+    print(password)
+    accessTime = datetime.utcnow()
+    result = ""
+
+    response = admin.find_one({'adminid': adminID})
+    
+        # if bcrypt.check_password_hash(response['password'], password):
+    if response:
+        if response['password']==password:
+            access_token = create_access_token(identity = {
+                'adminID': response['adminid'],
+                'accessTime': accessTime
+            })
+            result = jsonify({'token':access_token})
+    else:
+        result = jsonify({'error':'Invalid Admin Credentials'})
+    return result 
+
+
+
 
 if __name__=='__main__':
     app.run(debug=True)
