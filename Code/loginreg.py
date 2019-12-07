@@ -145,7 +145,29 @@ def adminlogin():
         result = jsonify({'error':'Invalid Admin Credentials'})
     return result 
 
+@app.route('/students/getcgpi',methods=['GET'])
+def getCGPI():
+    cgpi = mongo.db.cgpi
+    response = cgpi.find({})
+    json_docs = []
+    for doc in response:
+        json_doc = json.dumps(doc, default=json_util.default)
+        json_docs.append(json_doc)
+    result = jsonify({'response':json_docs})
+    return result
 
+
+
+@app.route('/students/getrooms',methods=['GET'])
+def getRooms():
+    rooms = mongo.db.rooms
+    response = rooms.find({})
+    json_docs = []
+    for doc in response:
+        json_doc = json.dumps(doc, default=json_util.default)
+        json_docs.append(json_doc)
+    result = jsonify({'response':json_docs})
+    return result
 
 
 if __name__=='__main__':
