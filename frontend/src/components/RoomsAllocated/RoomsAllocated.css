@@ -1,1 +1,66 @@
- 
+.roomsList{
+    padding: 40px;
+} 
+
+.roomList-item{
+    padding: 10px;
+
+}
+.roomList-item{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.1em;
+}
+/* .item-column-no{
+    width:10%;
+} */
+
+.item-column-roomNo{
+    width:10%;
+}
+
+.item-column-hostel{
+    width:45%;  
+}
+.item-column-allocated{
+    width:15%;  
+    display: flex;
+    flex-direction: column;
+}
+.item-column-allocatedRoom{
+    width:30%;  
+    display: flex;
+    flex-direction: column;
+}
+.roomList-header{
+    font-weight: 700;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000;
+    background-color: #fff;
+}
+.button-Allocate{
+    font-family: Montserrat;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px;
+    background-color: #000;
+    color: #eee;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+@media(max-width:700px){
+    .roomsList{
+        padding: 0px;
+    } 
+    .roomList-header{
+        font-size: 0.7em;
+    }
+    .roomList-item{
+        font-size: 0.7em;
+    }
+}

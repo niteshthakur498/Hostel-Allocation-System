@@ -34,3 +34,14 @@
     border-bottom: 2px solid #000;
     background-color: #fff;
 }
+@media(max-width:700px){
+    .applicationsList{
+        padding: 0px;
+    } 
+    .applicationList-header{
+        font-size: 0.7em;
+    }
+    .applicationList-item{
+        font-size: 0.7em;
+    }
+}
