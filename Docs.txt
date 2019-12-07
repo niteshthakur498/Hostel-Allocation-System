@@ -1,0 +1,126 @@
+
+
+FRONTEND
+
+
+
+React.js
+React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”.
+React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+Declarative views make your code more predictable and easier to debug.
+React lets us build encapsulated components that manage their own state, then compose them to make complex UIs.
+
+
+JavaScript
+JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. 
+While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, 
+Apache CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, 
+imperative, and declarative (e.g. functional programming) styles. 
+
+
+HTML
+HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content.
+HTML consists of a series of elements, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, 
+or act a certain way. The enclosing tags can make a word or image hyperlink to somewhere else, can italicize words, 
+can make the font bigger or smaller, and so on.
+
+CSS
+Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML 
+(including XML dialects such as SVG, MathML or XHTML). 
+CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
+CSS is one of the core languages of the open Web and is standardized across Web browsers according to the W3C specification. 
+Developed in levels, CSS1 is now obsolete, CSS2.1 is a recommendation, and CSS3, now split into smaller modules, 
+is progressing on the standardization track.
+
+React Router
+React Router is the standard routing library for React.React Router keeps your UI in sync with the URL. 
+It has a simple API with powerful features like lazy code loading, dynamic route matching, and location transition handling built right in.
+
+
+
+BACKEND
+
+
+
+
+Python
+Python is a widely used general-purpose, high level programming language.
+It was initially designed by Guido van Rossum in 1991 and developed by Python Software Foundation. 
+It was mainly developed for emphasis on code readability, and its syntax allows programmers to express concepts in fewer lines of code.
+
+
+Flask
+Flask is a popular, extensible web microframework for building web applications and APIs with Python.
+Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. 
+It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.
+
+
+Pymongo
+PyMongo is a Python distribution containing tools for working with MongoDB, and is the recommended way to work with MongoDB from Python.
+
+bcrypt
+bcrypt is a password hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at USENIX in 1999.
+
+jsonwebtoken
+JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. 
+This information can be verified and trusted because it is digitally signed. 
+JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
+
+
+pandas
+pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
+
+
+CORS
+Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP headers to tell browsers to give a web application running at one origin, 
+access to selected resources from a different origin. 
+A web application executes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, or port) from its own.
+
+
+
+
+DATABASE
+
+
+MongoDB
+MongoDB is a NoSQL database which stores the data in form of key-value pairs. 
+It is an Open Source, Document Database which provides high performance and scalability along with data modelling and data management of huge sets of data in an enterprise application. 
+MongoDB also provides the feature of Auto-Scaling.
+
+
+
+
+Admin Module
+
+Hostel Administration can log in as admin using admin credentials. After authenticating credentials, user will be redirected to admin page else it will generate a alert message that credentials are not correct.
+
+
+-----Application Recieved 
+        Admin will get a list of students who have applied for room in the particular hostel. It will show students Roll Numbers, Hostel they have applied for and their room choices, which they are intereste din decreasing priority order.
+
+
+------ Hostel Rooms
+        Admin will get a list of rooms of the particular hostel and information about them like  a particular room is allocated is not if allocated, whom it is allocated to.
+        and with these there will be allocate button which will allocate rooms to the interested students based on the applications recieed for hostel rooms and priority will be given to students with larger CGPA.
+
+------Admin Profile 
+        This sub-module contains the basic information regarding to admin and hostel, whose admin he/she is.
+
+
+------Log Out
+        A log out button for log out from its profile
+
+
+Student Module
+Student can register to himself/herself to the portal and then basis of those credientials he/she can log in his/her student profile.
+
+
+-----Student Profile
+        Student profile modeule contains information of the students like name email, phone number, cgpa and branch
+
+
+-----Choice Filling 
+        Choice FIlling module allows student to enter his choice for room iun the a particular hostel. Student can add any number of choices for room in comma separeted manner.
+
+-----Log Out
+     A log out button for log out from its profile

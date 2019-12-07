@@ -8,6 +8,27 @@ import PageTitle from '../PageTitle/Pagetitle';
 class StudentProfile extends React.Component{
     constructor(props){
         super(props);
+        this.state={
+            cgpi:0
+        }
+    }
+    componentDidMount(){
+        fetch('http://127.0.0.1:5000/students/getcgpi')
+            .then(res=>res.json())
+            .then(result=>{
+                let ch = result.response
+                ch= ch.map(val=>{
+                    return JSON.parse(val);
+                })
+                let f = ch.find(elem => elem.rollno == this.props.rollno)
+                console.log(f)
+                this.setState({cgpi:f.cgpa},()=>{
+                    console.log(this.state)
+                });
+            })
+            .catch(err=>{
+                console.log(err);
+            })
     }
     render(){
         // let studentData=localStorage.getItem("student_token").identity;
@@ -36,6 +57,14 @@ class StudentProfile extends React.Component{
                             </span>
                             <span className="infoValue">
                                 {this.props.rollno}
+                            </span>
+                        </div>
+                        <div className="infoGroup">
+                            <span className="infoTitle">
+                                CGPA: 
+                            </span>
+                            <span className="infoValue">
+                                {this.state.cgpi}
                             </span>
                         </div>
                         <div className="infoGroup">
