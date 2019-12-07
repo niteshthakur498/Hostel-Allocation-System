@@ -10,7 +10,8 @@ class RoomsAllocated extends React.Component{
         this.state={
             cgpi:[],
             rooms:[],
-            applictions:[]
+            applictions:[],
+            complete: false
         }
     }
     extractCGPI(){
@@ -80,23 +81,48 @@ class RoomsAllocated extends React.Component{
         for(let i=0;i<cgpiList.length;i++){
             let st = cgpiList[i];
             const applicationFound = applicationList.find(element => parseInt(element.rollNo) === st.rollno);
-            if(applicationFound){
+            const already = roomsList.find(elem=>{
+                return elem.allocatedRollno === (st.rollno)
+            })
+            console.log(typeof st.rollno )
+            console.log("hiii",already)
+            if(!already && applicationFound){
                 let options= applicationFound.roomOptions;
                 for(let j=0;j<options.length;j++){
                     let opt = options[j];
                     console.log(options)
-                    console.log("Here")
                     const roomFound = roomsList.find(element => element.roomno == opt);
-                    console.log(roomFound)
+                    console.log(typeof opt)
                     if(roomFound && !roomFound.allocated){
                         console.log(opt);
-                        roomFound.allocated=true;
+                        // roomFound.allocated=true;
+                        let room = {
+                            roomno: parseInt(opt),
+                            allocatedRollno: st.rollno
+                        }
+                        fetch('http://127.0.0.1:5000/students/updateroom',
+                        {
+                            method: 'PATCH',  
+                            body :JSON.stringify(room),
+                            headers:{
+                                'Content-Type': 'application/json;charset=UTF-8'
+                              }
+                        })
+                        .then(res=>res.json())
+                        .then(result=>{
+                            console.log(result);
+                        })
+                        roomFound.allocated = true
                         break;
                     }
                 }
             }
         }
         console.log("End");
+        this.setState({complete:true},()=>{
+            console.log(this.state.complete)
+        })
+        console.log(this.state.complete)
     }
     render(){
         const rooms = this.state.rooms.map((room,index)=>{
@@ -106,7 +132,7 @@ class RoomsAllocated extends React.Component{
                 all = 'No';
             }
             else{
-                all=="Yes"
+                all="Yes"
             }
             let allR='';
             if(room.allocatedRollno===0){
@@ -115,7 +141,6 @@ class RoomsAllocated extends React.Component{
             else{
                 allR=room.allocatedRollno
             }
-            console.log(room.allocated);
             return(
                 <div className="roomList-item" key={index}>
                     {/* <div className="item-column-no">{index+1}.</div> */}
@@ -130,7 +155,6 @@ class RoomsAllocated extends React.Component{
                 </div>
             );
         })
-        console.log(rooms);
         return(
             <div className="allocatedList-body">
                 <div className="allocatedbody-content">

@@ -170,5 +170,17 @@ def getRooms():
     return result
 
 
+
+@app.route('/students/updateroom',methods=['PATCH'])
+def updateRoom():
+    rooms = mongo.db.rooms
+    roomno = (request.get_json()['roomno'])
+    allocatedRollno = request.get_json()['allocatedRollno']
+    print(roomno)
+    rooms.update_one({'roomno': roomno},{'$set':{'allocated': 'true','allocatedRollno': allocatedRollno}},upsert=False)
+    result = jsonify({'response': 'jij'})
+    return result
+
+
 if __name__=='__main__':
     app.run(debug=True)
