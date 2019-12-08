@@ -22,8 +22,8 @@
 .hostel-year{
     font-weight: 700;
 }
-.hostel-room-type, .hostel-rooms{
-    
+.hostel-room-type{
+    font-weight: 700;
 }
 @media(max-width:700px){
     .hostel-item{

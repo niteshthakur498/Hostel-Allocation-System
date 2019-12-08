@@ -15,36 +15,11 @@ class Hostel  extends React.Component{
                             <div className="hostel-item">
                                 <div className="hostel-name">Himgiri Boys Hostel</div>
                                 <div className="hostel-year">Final Year</div>
-                                <div className="hostel-rooms">345</div>
-                                <div className="hostel-room-type">Singlets</div>
-                            </div>
-                            <div className="hostel-item">
-                                <div className="hostel-name">Himgiri Boys Hostel</div>
-                                <div className="hostel-year">Final Year</div>
-                                <div className="hostel-rooms">345</div>
-                                <div className="hostel-room-type">Singlets</div>
-                            </div><div className="hostel-item">
-                                <div className="hostel-name">Himgiri Boys Hostel</div>
-                                <div className="hostel-year">Final Year</div>
-                                <div className="hostel-rooms">345</div>
-                                <div className="hhostel-room-type">Singlets</div>
-                            </div>
-                            <div className="hostel-item">
-                                <div className="hostel-name">Himgiri Boys Hostel</div>
-                                <div className="hostel-year">Final Year</div>
-                                <div className="hostel-rooms">345</div>
-                                <div className="hostel-room-type">Singlets</div>
-                            </div>
-                            <div className="hostel-item">
-                                <div className="hostel-name">Himgiri Boys Hostel</div>
-                                <div className="hostel-year">Final Year</div>
-                                <div className="hostel-rooms">345</div>
-                                <div className="hostel-room-type">Singlets</div>
-                            </div>
-                            <div className="hostel-item">
-                                <div className="hostel-name">Himgiri Boys Hostel</div>
-                                <div className="hostel-year">Final Year</div>
-                                <div className="hostel-rooms">345</div>
+                                <br></br>
+                                <div className="hostel-year">Rooms Available</div>
+                                <div className="hostel-rooms">101 - 114</div>
+                                <div className="hostel-rooms">201 - 214</div>
+                                <br></br>
                                 <div className="hostel-room-type">Singlets</div>
                             </div>
                         </div>

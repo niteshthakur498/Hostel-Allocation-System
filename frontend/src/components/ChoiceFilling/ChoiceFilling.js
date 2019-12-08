@@ -136,7 +136,7 @@ class ChoiceFilling extends React.Component{
                                 label="Hostel"
                                 htmlFor='hostel'
                                 name='hostel'
-                                options="Himgiri Boys Hostel, Himadri Boys Hostel, Neelkanth Boys Hostel"
+                                options="Himgiri Boys Hostel"
                                 onChange = {this.handleChange.bind(this)}
                             />
                             <Input 
