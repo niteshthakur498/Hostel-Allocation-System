@@ -55,14 +55,20 @@ class StudentLogIn extends Component{
             .then(res=>res.json())
             .then(result=>{
                 console.log(result);
-                console.log(jwt.verify(result.token,'secret'));
-                localStorage.setItem('student_token',result.token);
-                // this.setState({
-                //     isLogIn:true
-                // })
-                // const {history}=this.props;
-                // history.push('/student/profile');
-                this.props.onLogIn();
+                if(result.error){
+                    alert("Invalid RollNo or Password")
+                }
+                else
+                {
+                    console.log(jwt.verify(result.token,'secret'));
+                    localStorage.setItem('student_token',result.token);
+                    // this.setState({
+                    //     isLogIn:true
+                    // })
+                    // const {history}=this.props;
+                    // history.push('/student/profile');
+                    this.props.onLogIn();
+                }
                 
             })
             .catch(err=>{

@@ -39,7 +39,6 @@ class AdminLogIn extends Component{
             alert("Enter All Fields Correctly");
         }
         else{
-            console.log(this.state);
             let data = {
                 adminID:this.state.adminid,
                 password:this.state.password
@@ -53,7 +52,10 @@ class AdminLogIn extends Component{
             })
             .then(res=>res.json())
             .then(result=>{
-                console.log(result);
+                if(result.error){
+                    alert("Invalid ID or Password")
+                    return;
+                }
                 console.log(jwt.verify(result.token,'secret'));
                 localStorage.setItem('admin_token',result.token);
                 // this.setState({

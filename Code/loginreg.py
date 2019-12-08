@@ -75,7 +75,7 @@ def login():
         else:
             result = jsonify({"error":"Invalid username and password"})
     else:
-        result = jsonify({"result":"No results found"})
+        result = jsonify({"error":"No results found"})
     return result 
 
 
@@ -127,7 +127,6 @@ def adminlogin():
     admin = mongo.db.admin
     adminID = request.get_json()['adminID']
     password = request.get_json()['password']
-    print(password)
     accessTime = datetime.utcnow()
     result = ""
 
@@ -141,6 +140,8 @@ def adminlogin():
                 'accessTime': accessTime
             })
             result = jsonify({'token':access_token})
+        else:
+            result = jsonify({'error':'Invalid Admin Credentials'})
     else:
         result = jsonify({'error':'Invalid Admin Credentials'})
     return result 
