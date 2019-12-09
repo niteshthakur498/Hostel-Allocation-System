@@ -23,7 +23,7 @@ class AdminProfile extends React.Component{
                 <div>
                     <div className="admin-header">
                         <div className="adminName">
-                            This is Me
+                            
                         </div>
                         <div className="adminDesig">
                             Admin
@@ -35,7 +35,7 @@ class AdminProfile extends React.Component{
                                 Hostel: 
                             </span>
                             <span className="infoValue">
-                                NBH
+                                Himgiri Boys Hostel
                             </span>
                         </div>
                         {/* <div className="infoGroup">

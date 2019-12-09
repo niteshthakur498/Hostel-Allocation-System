@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom'
 import jwt from 'jsonwebtoken'
 import './ChoiceFilling.css';
 
@@ -12,7 +13,8 @@ class ChoiceFilling extends React.Component{
         this.state={
             rollno:'',
             hostel:'',
-            rooms:''
+            rooms:'',
+            submitted:false
         }
     }
     handleChange(nam,val){
@@ -61,6 +63,9 @@ class ChoiceFilling extends React.Component{
         .then((res)=>res.json())
         .then(result=>{
             console.log("jijij");
+            this.setState({
+                submitted:true
+            });
         })
         .catch(err=>{
             console.log(err);
@@ -98,7 +103,11 @@ class ChoiceFilling extends React.Component{
                     this.submitController();
                 }
                 else{
+                    this.setState({
+                        submitted:true
+                    });
                     alert("Already Submitted")
+                    
                 }
             })
             .catch(err=>console.log(err))
@@ -106,6 +115,11 @@ class ChoiceFilling extends React.Component{
         }
       }
     render(){
+        if(this.state.submitted){
+            return (
+                <Redirect to='/student/profile'/>
+            )
+        }
         return(
             <div className="choiceFilling-Container">
                 <div>

@@ -9,3 +9,7 @@
     cursor: pointer;
     background-color: #666;
   }
+
+  .choiceFilling-Content form fieldset input{
+    color: #000;
+  }

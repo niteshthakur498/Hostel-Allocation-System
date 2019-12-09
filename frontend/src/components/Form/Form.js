@@ -94,7 +94,7 @@ class Form extends Component{
             .then((res)=>res.json())
             .then(result=>{
                 console.log(result);
-                alert(result);
+                alert("Student Registered");
                 this.setState({
                     submitted:true
                 });

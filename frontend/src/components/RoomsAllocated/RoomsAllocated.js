@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom'
 import './RoomsAllocated.css'
 
 import PageTitle from '../PageTitle/Pagetitle';
@@ -11,7 +11,7 @@ class RoomsAllocated extends React.Component{
             cgpi:[],
             rooms:[],
             applictions:[],
-            complete: false
+            completed: false
         }
     }
     extractCGPI(){
@@ -119,12 +119,15 @@ class RoomsAllocated extends React.Component{
             }
         }
         console.log("End");
-        this.setState({complete:true},()=>{
-            console.log(this.state.complete)
-        })
-        console.log(this.state.complete)
+        alert("Rooms Allocated")
+        this.setState({completed:true})
     }
     render(){
+        if(this.state.completed){
+            return(
+                <Redirect to='/admin/profile'/>
+            )
+        }
         const rooms = this.state.rooms.map((room,index)=>{
             room = JSON.parse(room);
             let all='';
