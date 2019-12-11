@@ -148,7 +148,7 @@ class RoomsAllocated extends React.Component{
                 <div className="roomList-item" key={index}>
                     {/* <div className="item-column-no">{index+1}.</div> */}
                     <div className="item-column-roomNo">{room.roomno}</div>
-                    <div className="item-column-hostel">{room.hostelName}</div>
+                    <div className="item-column-hostelName">{room.hostelName}</div>
                     <div className="item-column-allocated">
                         {all}
                     </div>
@@ -166,7 +166,7 @@ class RoomsAllocated extends React.Component{
                     <div className="roomsList">
                         <div className="roomList-item roomList-header">
                             <div className="item-column-roomNo">Room No</div>
-                            <div className="item-column-hostel">Hostel Name</div>
+                            <div className="item-column-hostelName">Hostel Name</div>
                             <div className="item-column-allocated">
                                 Allocated
                             </div>
